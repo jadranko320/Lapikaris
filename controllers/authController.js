@@ -41,7 +41,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     passwordConfirm: req.body.passwordConfirm
   });
 
-  const url = 'http://127.0.0.1:3000/index';
+  const url = 'https://lapikaris.herokuapp.com';
 
   await new Email(newUser, url).sendWelcome();
 
@@ -163,7 +163,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 
   const resetURL = `${req.protocol}://${req.get(
     'host'
-  )}/index/${resetToken}#popupResetPassword`;
+  )}/${resetToken}#popupResetPassword`;
 
   try {
     await new Email(user, resetURL).sendPasswordReset();
