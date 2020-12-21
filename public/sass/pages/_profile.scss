@@ -1,0 +1,151 @@
+.user-info {
+  margin: 4rem;
+  color: var(--c-prim-3);
+
+  display: flex;
+  justify-content: space-evenly;
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  &__item {
+    font-size: 1.6rem;
+
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+
+    span {
+      margin-right: 1rem;
+    }
+  }
+
+  &--b {
+    font-weight: 600;
+  }
+
+  &__data {
+    &-changing {
+      width: 30%;
+      font-size: 1.5rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      @include respond(phone) {
+        width: 100%;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: var(--c-prim-3);
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      font-weight: 600;
+    }
+  }
+}
+
+.tours-header {
+  background-image: url(../img/japan-3.jpg);
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  height: 10vh;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+}
+
+// TOUR LIST
+
+.tours {
+  margin: 4rem 20%;
+  font-size: 1.6rem;
+  color: var(--c-prim-3);
+
+  @include respond(phone) {
+    margin: 4rem 1rem;
+  }
+
+  &__data {
+    &--big {
+      width: 30%;
+    }
+    &--small {
+      width: 20%;
+
+      @include respond(phone) {
+        width: 30%;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    @include respond(phone) {
+      flex-wrap: wrap;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--c-prim-3);
+    }
+
+    &:hover {
+      font-weight: 600;
+      background-color: var(--c-white);
+    }
+  }
+
+  &__actions {
+    &-item {
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+
+      &:link,
+      &:visited {
+        text-decoration: none;
+      }
+    }
+    &-pic {
+      transition: all 0.5s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

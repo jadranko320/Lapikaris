@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Lapikaris - spełniaj marzenia</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="sidebar sidebar--left">
+        <a href="index.html">
+          <div class="side-logo">
+            <img
+              src="img/logo.png"
+              alt="Logo"
+              class="side-logo__image"
+              title="Designed by Freepik / www.freepik.com"
+            />
+          </div>
+        </a>
+
+        <ul class="side-nav">
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <img
+                src="https://img.icons8.com/material/30/3B2001/geography--v1.png"
+                class="side-nav__icon"
+              />
+              <span>Pełna oferta</span>
+            </a>
+          </li>
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <img
+                src="https://img.icons8.com/material/30/3B2001/palm-tree.png"
+                class="side-nav__icon"
+              />
+              <span>Wakacje / Lato 2021</span>
+            </a>
+          </li>
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <img
+                src="https://img.icons8.com/material/30/3B2001/winter.png"
+                class="side-nav__icon"
+              />
+              <span>Ferie zimowe 2021</span>
+            </a>
+          </li>
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <img
+                src="https://img.icons8.com/material/30/3B2001/museum--v1.png"
+                class="side-nav__icon"
+              />
+              <span>Wycieczki krajoznawcze</span>
+            </a>
+          </li>
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <img
+                src="https://img.icons8.com/ios-filled/30/3B2001/coconut-cocktail.png"
+                class="side-nav__icon"
+              />
+              <span>Wycieczki egzotyczne</span>
+            </a>
+          </li>
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <img
+                src="https://img.icons8.com/ios-filled/30/3B2001/airplane-take-off.png"
+                class="side-nav__icon"
+              />
+              <span>Loty</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="sidebar sidebar--right u-text-center">
+        <div class="profile">
+          <figure class="profile__circle">
+            <img
+              src="img/user-1.jpg"
+              aly="Person on a tour"
+              class="profile__img"
+            />
+            <figcaption class="profile__caption">
+              <a href="#" class="profile__link">Marc Smith</a>
+            </figcaption>
+          </figure>
+        </div>
+
+        <ul class="side-nav">
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <span>Użytkownicy</span>
+            </a>
+          </li>
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <span>Wycieczki</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- <div class="ad">
+          <img src="img/ad.png" alt="Reklama" class="ad__content" />
+        </div> -->
+
+        <ul class="side-nav">
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <span>Wyloguj</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="popup" id="popupChangeData">
+        <div class="popup__bg popup__bg--change-data"></div>
+        <div class="popup__content">
+          <h2 class="popup__heading">Zmiana danych logowania</h2>
+
+          <form class="popup__form data-form">
+            <a href="#" class="popup__close">&times;</a>
+            <input
+              type="email"
+              class="form__input"
+              placeholder="Adres email"
+              id="email"
+            />
+            <label for="email" class="form__label">Adres email</label>
+
+            <input
+              type="password"
+              class="form__input"
+              placeholder="Hasło"
+              id="passwordGen"
+            />
+            <label for="passwordGen" class="form__label">Hasło</label>
+
+            <img
+              src="https://img.icons8.com/ios-glyphs/24/000000/key--v1.png"
+              class="generate-key"
+              title="Generuj hasło"
+              id="generate"
+            />
+
+            <button class="btn btn--azure">Zmień</button>
+          </form>
+
+          <!-- <a href="#" class="info-popup__link"> -->
+          <span>Wpisz jedynie dane, które chcesz zmienić!</span>
+          <!-- </a> -->
+        </div>
+      </div>
+
+      <div class="popup" id="popupChangeNumber">
+        <div class="popup__bg popup__bg--change-data"></div>
+        <div class="popup__content">
+          <h2 class="popup__heading popup__heading--margin-big">
+            Zmiana numeru telefonu
+          </h2>
+
+          <form class="popup__form data-form">
+            <a href="#" class="popup__close">&times;</a>
+            <input
+              type="text"
+              class="form__input form__input--small"
+              placeholder="Numer telefonu"
+              id="phoneNumber"
+            />
+            <label for="phoneNumber" class="form__label">Numer telefonu</label>
+            <button class="btn btn--azure">Zmień</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="popup" id="popupChangeAddress">
+        <div class="popup__bg popup__bg--change-address"></div>
+        <div class="popup__content">
+          <h2 class="popup__heading u-mg-btm-plus">Zmiana adresu</h2>
+
+          <form class="popup__form address-form">
+            <a href="#" class="popup__close">&times;</a>
+            <input
+              type="text"
+              class="form__input"
+              placeholder="Adres zamieszkania"
+              id="address"
+            />
+            <label for="address" class="form__label">Adres zamieszkania</label>
+
+            <input
+              type="text"
+              class="form__input"
+              placeholder="Miasto"
+              id="city"
+            />
+            <label for="city" class="form__label">Miasto</label>
+
+            <input
+              type="text"
+              class="form__input"
+              placeholder="Kod pocztowy - 00-000"
+              id="code"
+            />
+            <label for="code" class="form__label">Kod pocztowy</label>
+
+            <button class="btn btn--azure">Zmień</button>
+          </form>
+
+          <!-- <a href="#" class="info-popup__link"> -->
+          <span>Wpisz jedynie dane, które chcesz zmienić!</span>
+          <!-- </a> -->
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="content__header">
+          <header class="header header--small">
+            <h1 class="header__title header__title--subpage">Marc Smith</h1>
+            <img
+              src="img/tour-pic-7.jpg"
+              alt="Zdjęcie Japonii"
+              class="header__img u-img-dark"
+            />
+          </header>
+        </div>
+
+        <!-- wycieczki / dane osobowe + zmiana / dane logowania + zmiana / usuwanie konta -->
+
+        <div class="user-info">
+          <div class="user-info__data">
+            <div class="user-info__item">
+              <span class="user-info--b">Imię i nazwisko:</span>
+              <span>Marc Smith</span>
+              <img src="https://img.icons8.com/material/17/3B2001/male.png" />
+              <!-- <img src="https://img.icons8.com/material/17/3B2001/female.png" /> -->
+            </div>
+            <div class="user-info__item">
+              <span class="user-info--b">Adres email:</span>
+              <span>msmith@gmail.com</span>
+            </div>
+            <div class="user-info__item">
+              <span class="user-info--b">Data urodzenia:</span>
+              <span>13.07.1998</span>
+            </div>
+            <div class="user-info__item">
+              <span class="user-info--b">Adres:</span>
+              <span>Chrobrego 13/22</span>
+            </div>
+            <div class="user-info__item">
+              <span class="user-info--b">Miasto:</span>
+              <span>Warszawa</span>
+            </div>
+            <div class="user-info__item">
+              <span class="user-info--b">Kod pocztowy:</span>
+              <span>00-000</span>
+            </div>
+            <div class="user-info__item">
+              <span class="user-info--b">Status konta:</span>
+              <label class="form-switch">
+                <input type="checkbox" checked />
+                <i></i>
+              </label>
+            </div>
+            <div class="user-info__item">
+              <span class="user-info--b">Prawa administratora:</span>
+              <label class="form-switch">
+                <input type="checkbox" />
+                <i></i>
+              </label>
+            </div>
+          </div>
+          <div class="user-info__data-changing">
+            <a href="#popupChangeData" class="user-info__link"
+              >Zmień dane logowania</a
+            >
+            <a href="#popupChangeAddress" class="user-info__link"
+              >Zmień adres zamieszkania</a
+            >
+            <a href="#popupChangeNumber" class="user-info__link"
+              >Zmień numeru telefonu</a
+            >
+            <a href="#shopping" class="user-info__link"
+              >Zarządzanie wycieczkami</a
+            >
+            <a href="#" class="user-info__link">Usuń konto</a>
+          </div>
+        </div>
+
+        <div class="tours-header" id="shopping">
+          <span>Zakupione wycieczki</span>
+        </div>
+        <div class="tours">
+          <ul class="tours__list">
+            <li class="tours__item">
+              <span class="tours__data--small">19.03.2020</span>
+              <span class="tours__data--small">Dubaj</span>
+              <span class="tours__data--small">1 os.</span>
+              <div class="tours__actions">
+                <a href="#" class="tours__actions-item">
+                  <img
+                    src="https://img.icons8.com/material/20/2ECC71/checked-2--v2.png"
+                    title="Opłacone"
+                    class="tours__actions-pic"
+                  />
+                </a>
+                <a href="#" class="tours__actions-item">
+                  <img
+                    src="https://img.icons8.com/material/20/3B2001/delete-forever--v1.png"
+                    title="Anuluj zakup"
+                    class="tours__actions-pic"
+                  />
+                </a>
+                <a href="#" class="tours__actions-item">
+                  <img
+                    src="https://img.icons8.com/material/20/3B200/only-cash.png"
+                    title="Zwrot płatności"
+                    class="tours__actions-pic"
+                  />
+                </a>
+              </div>
+            </li>
+
+            <li class="tours__item">
+              <span class="tours__data--small">19.03.2020</span>
+              <span class="tours__data--small">Marrakesz</span>
+              <span class="tours__data--small">1 os.</span>
+              <div class="tours__actions">
+                <a href="#" class="tours__actions-item">
+                  <img
+                    src="https://img.icons8.com/material/20/2ECC71/checked-2--v2.png"
+                    title="Opłacone"
+                    class="tours__actions-pic"
+                  />
+                </a>
+                <a href="#" class="tours__actions-item">
+                  <img
+                    src="https://img.icons8.com/material/20/3B2001/delete-forever--v1.png"
+                    title="Anuluj zakup"
+                    class="tours__actions-pic"
+                  />
+                </a>
+                <a href="#" class="tours__actions-item">
+                  <img
+                    src="https://img.icons8.com/material/20/3B200/only-cash.png"
+                    title="Zwrot płatności"
+                    class="tours__actions-pic"
+                  />
+                </a>
+              </div>
+            </li>
+
+            <li class="tours__item">
+              <span class="tours__data--small">19.03.2020</span>
+              <span class="tours__data--small">Marrakesz</span>
+              <span class="tours__data--small">1 os.</span>
+              <div class="tours__actions">
+                <a href="#" class="tours__actions-item">
+                  <img
+                    src="https://img.icons8.com/material/20/E74C3C/checked-2--v2.png"
+                    title="Nieopłacone"
+                    class="tours__actions-pic"
+                  />
+                </a>
+                <a href="#" class="tours__actions-item">
+                  <img
+                    src="https://img.icons8.com/material/20/3B2001/delete-forever--v1.png"
+                    title="Anuluj zakup"
+                    class="tours__actions-pic"
+                  />
+                </a>
+                <a href="#" class="tours__actions-item">
+                  <img
+                    src="https://img.icons8.com/material/20/3B200/only-cash.png"
+                    title="Zwrot płatności"
+                    class="tours__actions-pic"
+                  />
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <footer class="footer">
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a href="" class="footer__link">Regulamin</a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link">FAQ</a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link">Autor</a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link">Prawa autorskie</a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link">Kontakt</a>
+            </li>
+          </ul>
+
+          <img
+            src="img/logo.png"
+            alt="Logo"
+            class="footer__img"
+            title="Designed by Freepik / www.freepik.com"
+          />
+
+          <div class="footer__desc">
+            Praca została wykonana przez Adriana Sikorę, na potrzeby obrony
+            tytułu inżyniera.
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/user.js" charset="utf-8"></script>
+    <script
+      type="text/javascript"
+      src="js/darkmode.js"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

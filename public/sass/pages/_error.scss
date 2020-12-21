@@ -1,0 +1,8 @@
+.centered-error {
+  margin: 10rem auto;
+  color: var(--c-prim-3);
+
+  @include respond(phone) {
+    font-size: 1.3rem;
+  }
+}

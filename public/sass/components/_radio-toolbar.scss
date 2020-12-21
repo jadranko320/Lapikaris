@@ -1,0 +1,33 @@
+.radio-toolbar {
+  display: flex;
+
+  @include respond(phone) {
+    display: flex;
+    flex-direction: column;
+    transform: translateX(2rem);
+  }
+
+  & input[type="radio"] {
+    visibility: hidden;
+
+    &:focus + label {
+      border: 2px solid var(--c-prim-3);
+    }
+
+    &:checked + label {
+      background-color: var(--c-prim-1);
+      font-weight: 600;
+    }
+  }
+
+  & label {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--c-prim-3);
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--c-white);
+    }
+  }
+}

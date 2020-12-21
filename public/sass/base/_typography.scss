@@ -1,0 +1,100 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+.header {
+  &__title {
+    color: #fff;
+    text-transform: uppercase;
+    &--main {
+      font-size: 5rem;
+      font-weight: 600;
+      letter-spacing: 1.5rem;
+
+      @include respond(phone) {
+        font-size: 4rem;
+      }
+    }
+    &--sub {
+      font-size: 3rem;
+      padding-left: 0.3rem;
+      letter-spacing: 0.44rem;
+
+      @include respond(phone) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+.side-nav {
+  font-size: 1.5rem;
+  font-weight: 600;
+  list-style: none;
+
+  &__item {
+    padding: 2rem 2rem;
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--c-prim-3);
+  }
+}
+
+.popup__heading {
+  text-transform: uppercase;
+  color: var(--c-prim-3);
+  font-size: 2.2rem;
+  margin-top: 2rem;
+  margin-bottom: -4rem;
+
+  &--order {
+    text-transform: uppercase;
+    color: var(--c-prim-3);
+    font-size: 2.2rem;
+    margin-bottom: -7rem;
+
+    @include respond(phone) {
+      margin-top: -4rem;
+      margin-bottom: -10rem;
+    }
+  }
+
+  &--margin-small {
+    margin-bottom: -10rem;
+  }
+
+  &--margin-big {
+    margin-bottom: -30rem;
+  }
+
+  &--margin-medium {
+    margin-top: 4rem;
+    margin-bottom: 0rem;
+  }
+}
+
+.info-popup__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--c-prim-3);
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.tour-heading {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--c-prim-3);
+  text-align: center;
+  margin: 2rem 0 4rem 0;
+}

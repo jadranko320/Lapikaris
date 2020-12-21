@@ -1,0 +1,44 @@
+nav.sidebar.sidebar--right.u-text-center
+  - if (!user)
+    ul.side-nav
+      li.side-nav__item
+        a.side-nav__link(href='#popupLogin')
+          span Logowanie
+      li.side-nav__item
+        a.side-nav__link(href='#popupSignup')
+          span Rejestracja
+
+  - if (user)
+    .profile
+      figure.profile__circle
+        - if (user.photo)
+          img.profile__img(src=`/img/users/${user.photo}` alt='Person on a tour')
+        - else
+          img.profile__img(src='/img/profile-pic.png' alt='Person on a tour')
+        figcaption.profile__caption
+          - if (user.name)
+            a.profile__link(href='/my-account') #{user.name}
+          - else
+            a.profile__link(href='/my-account') Profil
+
+  - if (user && user.role === 'admin')
+    ul.side-nav
+      li.side-nav__item
+        a.side-nav__link(href='/users')
+          span Użytkownicy
+      li.side-nav__item
+        a.side-nav__link(href='/tours')
+          span Wycieczki
+      li.side-nav__item
+        a.side-nav__link(href='/orders')
+          span Zamówienia
+  
+  - if (!user || user.role !== 'admin')
+    .ad
+      img(src="/img/ad.png" alt="Reklama" class="ad__content")
+
+  - if (user)
+    ul.side-nav
+      li.side-nav__item
+        a.side-nav__link#logout-two(href='#')
+          span Wyloguj

@@ -1,0 +1,44 @@
+.select-tag {
+  margin-top: 5rem;
+  width: 15rem;
+  padding: 1.3rem 1rem 1rem 2rem;
+  font-size: 1.6rem;
+  border-radius: 100px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: var(--c-white);
+  border: none;
+  cursor: pointer;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:focus {
+    outline-width: 0;
+  }
+}
+
+.feeding-tag {
+  width: 30rem;
+  padding: 1.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 4.8rem;
+  border-radius: 100px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--c-white);
+  color: var(--c-prim-3);
+  border: none;
+  cursor: pointer;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:focus {
+    outline-width: 0;
+  }
+}

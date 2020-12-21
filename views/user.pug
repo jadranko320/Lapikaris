@@ -1,0 +1,110 @@
+extends base
+
+block append features
+    #popupChangeNumber.popup
+        .popup__bg.popup__bg--change-data
+        .popup__content
+            h2.popup__heading.popup__heading--margin-big Zmiana numeru telefonu
+            form.popup__form.data-form.change-phone-form
+                a.popup__close(href='#') ×
+                input#phoneNumberChangeNumber.form__input.form__input--small(type='text' placeholder='Numer telefonu')
+                label.form__label(for='phoneNumberChangeNumber') Numer telefonu
+                button.btn.btn--azure#changeUserNumber Zmień
+    #popupChangeAddress.popup
+        .popup__bg.popup__bg--change-address
+        .popup__content
+            h2.popup__heading.popup__heading--margin-medium Zmiana adresu
+            form.popup__form.address-form
+                a.popup__close(href='#') ×
+                input#addressChangeAddress.form__input(type='text' placeholder='Adres zamieszkania')
+                label.form__label(for='addressChangeAddress') Adres zamieszkania
+                input#cityChangeAddress.form__input(type='text' placeholder='Miasto')
+                label.form__label(for='cityChangeAddress') Miasto
+                input#codeChangeAddress.form__input(type='text' placeholder='Kod pocztowy - 00-000')
+                label.form__label(for='codeChangeAddress') Kod pocztowy
+                button.btn.btn--azure#changeUserAddress Zmień
+            span Wpisz jedynie dane, które chcesz zmienić!
+
+block content
+    - if (user)
+        .content
+            .content__header
+                header.header.header--small
+                    - if (userek.name)
+                        h1.header__title.header__title--subpage #{userek.name}
+                        img.header__img.u-img-dark(src='/img/tour-pic-7.jpg' alt=`${userek.name}`)
+                    - else
+                        h1.header__title.header__title--subpage Twój profil
+                        img.header__img.u-img-dark(src='/img/tour-pic-7.jpg' alt=`Twój profil`)
+            .user-info
+                .user-info__data
+                    .user-info__item
+                        span.user-info--b Imię i nazwisko:
+                        span #{userek.name}
+                        - if (userek.name)
+                            - const namee = userek.name.split(' ')[0];
+                            - let sex;
+                            - namee.endsWith('a') ? sex = '/img/icons/female.png' : sex = '/img/icons/male.png';
+                            img(src=`${sex}`)
+                    .user-info__item
+                        span.user-info--b Adres email:
+                        span #{userek.email}
+                    .user-info__item
+                        span.user-info--b Numer telefonu:
+                        span +48 #{userek.phone}
+                    .user-info__item
+                        span.user-info--b Adres:
+                        span #{userek.address}
+                    .user-info__item
+                        span.user-info--b Miasto:
+                        span #{userek.city}
+                    .user-info__item
+                        span.user-info--b Kod pocztowy:
+                        span #{userek.code}
+                    .user-info__item
+                        span.user-info--b Status konta:
+                        label.form-switch
+                            - if (userek.active === true)
+                                input.account-status(type='checkbox' checked)
+                            - else
+                                input.account-status(type='checkbox')
+                            i
+                    .user-info__item
+                        span.user-info--b Prawa administratora:
+                        label.form-switch
+                            - if (userek.role === 'admin')
+                                input.account-role(type='checkbox' checked)
+                            - else 
+                                input.account-role(type='checkbox')
+                            i
+                .user-info__data-changing
+                    a.user-info__link(href='#popupChangeAddress') Zmień adres zamieszkania
+                    a.user-info__link(href='#popupChangeNumber') Zmień numeru telefonu
+                    a.user-info__link(href='#shopping') Zarządzanie wycieczkami
+                    a.user-info__link.del-user-account(href='#') Usuń konto
+            #shopping.tours-header
+                span Zakupione wycieczki
+            .tours
+                ul.tours__list
+                    - const idArrDelOrder = [];
+                    each order in orders
+                        li.tours__item
+                            span.tours__data--small #{order.date}
+                            span.tours__data--small #{order.tour.country}
+                            - const people = order.adults * 1 + order.children * 1;
+                            span.tours__data--small #{people} os.
+                            .tours__actions
+                                //- a.tours__actions-item(href='#')
+                                //-     img.tours__actions-pic(src='/img/icons/checked-2--v2.png' title='Opłacone')
+                                a.tours__actions-item(href='#')
+                                    img.tours__actions-pic(src='/img/icons/delete-forever--v1.png' id=`${order.id}` title='Anuluj zakup' data-order-id=`${order.id}`)
+                                    - idArrDelOrder.push(`${order.id}`)
+                                //- a.tours__actions-item(href='#')
+                                //-     img.tours__actions-pic(src='/img/icons/only-cash.png' title='Zwrot płatności')
+
+            p(style='display: none' id='idArrDelOrder') #{idArrDelOrder}
+
+            include _footer
+
+    - else
+        h1.centered-error Prosze się zalogować

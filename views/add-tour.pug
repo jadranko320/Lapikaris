@@ -1,0 +1,60 @@
+extends base
+
+block content
+    - if (user)
+        .content
+            .content__header
+                header.header.header--small
+                    h1.header__title.header__title--subpage Nowa wycieczka
+                    img.header__img.u-img-dark(src='img/japan-1.jpg' alt='Zdjęcie Japonii')
+            form.edit-tour-form.add-tour-form
+                .edit-tour
+                    .edit-tour__section
+                        input#country.edit-tour__input(type='text' placeholder='Kraj')
+                        label.edit-tour__label(for='country') Kraj
+                        input#english.edit-tour__input(type='text' placeholder='Kraj po angielsku')
+                        label.edit-tour__label(for='english') Kraj po angielsku
+                        input#city.edit-tour__input(type='text' placeholder='Docelowa lokalizacja')
+                        label.edit-tour__label(for='city') Docelowa lokalizacja
+
+                        select#category.feeding-tag
+                            option.feeding-tag__item Kategoria
+                            option Wakacje
+                            option Ferie zimowe
+                            option Wycieczka krajoznawcza
+                            option Wycieczka egoztyczna
+
+                        input#startDate.edit-tour__input(type='text' placeholder='Data rozpoczęcia - dd.mm.rrrr')
+                        label.edit-tour__label(for='startDate') Data rozpoczęcia - dd.mm.rrrr
+                    .edit-tour__section
+                        input#flight.edit-tour__input(type='text' placeholder='Wylot')
+                        label.edit-tour__label(for='flight') Wylot
+                        input#duration.edit-tour__input(type='text' placeholder='Czas trwania (dni)')
+                        label.edit-tour__label(for='duration') Czas trwania (dni)
+                        select#feeding.feeding-tag
+                            option.feeding-tag__item Wyżywienie
+                            option 2 posiłki
+                            option 3 posiłki
+                            option All Inclusive
+                        input#price.edit-tour__input(type='text' placeholder='Cena')
+                        label.edit-tour__label(for='price') Cena
+                        input#limit.edit-tour__input(type='text' placeholder=`Limit miejsc`)
+                        label.edit-tour__label(for='limit') Limit miejsc
+
+                .edit-tour-desc.attraction-1
+                    textarea#attraction-1-text.edit-tour-desc__text(cols='66' rows='4' placeholder='Opis atrakcji')
+                .edit-tour-desc.attraction-2
+                    textarea#attraction-2-text.edit-tour-desc__text(cols='66' rows='4' placeholder='Opis atrakcji')
+                .edit-tour-desc.attraction-3
+                    textarea#attraction-3-text.edit-tour-desc__text(cols='66' rows='4' placeholder='Opis atrakcji')
+                .edit-tour-desc.attraction-4
+                    textarea#attraction-4-text.edit-tour-desc__text(cols='66' rows='4' placeholder='Opis atrakcji')
+                    
+                button.edit-tour__button Zapisz
+
+            include _footer
+
+        script(src='/js/edit-tour.js')
+
+    - else
+        h1.centered-error Prosze się zalogować

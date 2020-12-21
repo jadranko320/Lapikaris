@@ -1,0 +1,12 @@
+.spinner {
+  position: relative;
+
+  &__style {
+    position: fixed;
+
+    top: 50%;
+    left: 51.5%;
+
+    animation: pulsate 5s infinite ease-out;
+  }
+}

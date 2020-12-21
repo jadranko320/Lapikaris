@@ -1,0 +1,97 @@
+extends base
+
+block append features
+    #popupChangePhone.popup
+        .popup__bg.popup__bg--change-data
+        .popup__content
+            h2.popup__heading.popup__heading--margin-big Zmiana numeru telefonu
+            form.popup__form.data-form
+                a.popup__close(href='#') ×
+                input#phoneNumberChangePhone.form__input.form__input--small(type='text' placeholder='Numer telefonu')
+                label.form__label(for='phoneNumberChangePhone') Numer telefonu
+                button.btn.btn--azure#acceptPhone Zmień
+    #popupChangeAddressProf.popup
+        .popup__bg.popup__bg--change-address
+        .popup__content
+            h2.popup__heading.popup__heading--margin-medium Zmiana adresu
+            form.popup__form.address-form-prof
+                a.popup__close(href='#') ×
+                input#addressChangeAddressProf.form__input(type='text' placeholder='Adres zamieszkania')
+                label.form__label(for='addressChangeAddressProf') Adres zamieszkania
+                input#cityChangeAddressProf.form__input(type='text' placeholder='Miasto')
+                label.form__label(for='cityChangeAddressProf') Miasto
+                input#codeChangeAddressProf.form__input(type='text' placeholder='Kod pocztowy - 00-000')
+                label.form__label(for='codeChangeAddressProf') Kod pocztowy
+                button.btn.btn--azure Zmień
+            span Wpisz jedynie dane, które chcesz zmienić!
+
+block content
+    - if (user)
+        .content
+            .content__header
+                header.header.header--small
+                    - if (user.name)
+                        h1.header__title.header__title--subpage #{user.name}
+                        img.header__img.u-img-dark(src='img/tour-pic-7.jpg' alt=`${user.name}`)
+                    - else
+                        h1.header__title.header__title--subpage Twój profil
+                        img.header__img.u-img-dark(src='img/tour-pic-7.jpg' alt=`Twój profil`)
+            .user-info
+                .user-info__data
+                    .user-info__item
+                        span.user-info--b Imię i nazwisko:
+                        span #{user.name}
+                        - if (user.name)
+                            - const namee = user.name.split(' ')[0];
+                            - let sex;
+                            - namee.endsWith('a') ? sex = '/img/icons/female.png' : sex = '/img/icons/male.png';
+                            img(src=`${sex}`)
+                    .user-info__item
+                        span.user-info--b Adres email:
+                        span #{user.email}
+                    .user-info__item
+                        span.user-info--b Numer telefonu:
+                        span +48 #{user.phone}
+                    .user-info__item
+                        span.user-info--b Adres:
+                        span #{user.address}
+                    .user-info__item
+                        span.user-info--b Miasto:
+                        span #{user.city}
+                    .user-info__item
+                        span.user-info--b Kod pocztowy:
+                        span #{user.code}
+                .user-info__data-changing
+                    //- - if (!user.name)
+                    a.user-info__link(href='#popupChangeName') Podaj imię i nazwisko
+                    a.user-info__link(href='#popupChangePassword') Zmień hasło
+                    a.user-info__link(href='#popupChangeEmail') Zmień adres email
+                    a.user-info__link(href='#popupChangePhone') Zmień numer telefonu
+                    a.user-info__link(href='#popupChangeAddressProf') Zmień adres zamieszkania
+                    a.user-info__link(href='#shopping') Zarządzanie wycieczkami
+                    a.user-info__link(href='#popupChangeProfilePic') Dodaj zdjęcie profilowe
+                    a#delMyAcc.user-info__link(href='#') Usuń konto
+                    
+
+            #shopping.tours-header
+                span Twoje zakupy
+            .tours
+                ul.tours__list
+                    - const idArrDelOrder = [];
+                    each order in orders
+                        li.tours__item
+                            span.tours__data--small #{order.date}
+                            span.tours__data--small #{order.tour.country}
+                            - const people = order.adults * 1 + order.children * 1;
+                            span.tours__data--small #{people} os.
+                            .tours__actions
+                                a.tours__actions-item(href='#')
+                                    img.tours__actions-pic(src='img/icons/cancel--v1.png' id=`${order.id}` title='Usuń z zakupionych')
+                                a.tours__actions-item(href=`/add-review/${order.tour.id}#popupReview`)
+                                    img.tours__actions-pic(src='img/icons/reviewer-female--v1.png' title='Wystaw opinię')
+                                    - idArrDelOrder.push(`${order.id}`)
+        
+            p(style='display: none' id='idArrDelOrder') #{idArrDelOrder}
+                        
+
+            include _footer

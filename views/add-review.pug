@@ -1,0 +1,15 @@
+extends base
+
+block append features
+    #popupReview.popup
+        .popup__bg.popup__bg--add-review
+        .popup__content
+            h2.popup__heading Dodaj opinię
+            form.popup__form.review-form
+                a.popup__close#closeReview(href='#') ×
+                span.tour-info #{tour.country}
+                textarea.form__textarea#reviewContent(rows='10' cols='30' placeholder='50 < Liczba znaków < 200')
+                button.btn.btn--azure Dodaj
+
+block content
+    | Dodawanie recenzji

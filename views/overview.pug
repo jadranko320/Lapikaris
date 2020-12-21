@@ -1,0 +1,74 @@
+extends base
+
+block append head
+    script(type="text/javascript" src="/js/jquery-1.11.3.min.js")
+    script(type="text/javascript" src="/js/jquery.vmap.js")
+    script(type="text/javascript" src="/js/jquery.vmap.world.js")
+
+block content
+    .content
+        .content__header
+            header.header.header--small.u-img-light
+                h1.header__title.header__title--subpage Pe&lstrok;na oferta
+                video.header__video(autoplay='' muted='' loop='')
+                    source(src='/img/palmas.mp4' type='video/mp4')
+                    | Your browser is not supported!
+                    
+        .properties
+            #vmap.map-style(style='width: 700px; height: 500px')
+            form.sliders-form#searchOverview
+                .price-description
+                    span Cena minimalna - 
+                    span#minPrice 0
+                    span PLN
+                .slidecontainer
+                    input#minPriceRange.slider(type='range' min='0' max='5000' value='0')
+                .price-description
+                    span Cena maksymalna - 
+                    span#maxPrice 5000
+                    span PLN
+                .slidecontainer
+                    input#maxPriceRange.slider(type='range' min='0' max='5000' value='5000')
+                button.edit-tour__button Szukaj
+        .content__cards
+            each tour in tours
+                .card
+                    img.card__img(src=`/img/tours/${tour.gallery[0]}` alt='Zdjęcie wycieczki')
+                    .card__title #{tour.country}
+                    ul.card__list
+                        li.card__item
+                            img.item__arrow(src='/img/icons/double-right--v1.png')
+                            span.card__item--b Data rozpoczęcia:
+                            span #{tour.startDate}
+                        li.card__item
+                            img.item__arrow(src='/img/icons/double-right--v1.png')
+                            span.card__item--b Liczba dni:
+                            span #{tour.duration}
+                        li.card__item
+                            img.item__arrow(src='/img/icons/double-right--v1.png')
+                            span.card__item--b Wylot:
+                            span #{tour.flight.split(' - ')[0]}
+                        li.card__item
+                            img.item__arrow(src='/img/icons/double-right--v1.png')
+                            span.card__item--b Wyżywienie:
+                            span #{tour.feeding}
+                        li.card__item
+                            img.item__arrow(src='/img/icons/double-right--v1.png')
+                            span.card__item--b Lokalizacja:
+                            span #{tour.city}
+                    .card__price
+                        span.card__price--main #{tour.price} PLN
+                        span.card__price--sub / os
+                    .btn.btn--beige
+                        a.card__link(href=`/tour/${tour.countrySlug}`) Więcej
+                    
+        .content__paginate.page
+            img.page-arrow#previous(src='/img/icons/circled-chevron-left--v1.png')
+            input#pageNumber.page-number(type='text' placeholder='1')
+            img.page-arrow#next(src='/img/icons/circled-chevron-right--v1.png')
+
+        p(style='display: none' id='sumObjects') #{sum}
+
+        include _footer
+
+    script(src='/js/overview.js')

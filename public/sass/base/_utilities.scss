@@ -1,0 +1,42 @@
+.u-text-center {
+  text-align: center;
+}
+
+.u-img-light {
+  opacity: 0.8;
+}
+
+.u-img-dark {
+  filter: brightness(70%);
+}
+
+.u-space {
+  height: 5rem;
+}
+
+.u-mg-btm-min {
+  margin-bottom: -5rem;
+}
+
+.u-mg-btm-plus {
+  margin-bottom: -2rem;
+}
+
+.u-margin-prop {
+  margin-top: 3rem;
+  margin-bottom: -5rem;
+  transform: scale(1.3);
+}
+
+.u-margin-min {
+  margin-bottom: -2rem;
+}
+
+.u-margin-top {
+  margin-top: -5rem;
+
+  @include respond(phone) {
+    margin-top: -9rem;
+    margin-bottom: -3rem;
+  }
+}

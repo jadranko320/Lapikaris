@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:root {
+  --c-prim-1: rgb(231, 221, 200);
+  --c-prim-2: rgb(201, 182, 131);
+  --c-prim-3: rgb(59, 32, 1);
+  --c-prim-4: rgb(231, 228, 220);
+  --c-white: rgb(255, 255, 255);
+  // --c-azure-1: rgb(218, 235, 236);
+  --c-azure-1: rgb(231, 228, 220);
+  // --c-azure-2: rgb(183, 229, 231);
+  --c-azure-2: rgb(231, 221, 200);
+  --c-azure-3: rgb(231, 228, 220);
+  --c-grey-1: rgb(243, 243, 243);
+  --popup-bg: blur(8px);
+}
+
+.darkmode {
+  // --c-prim-1: rgb(114, 114, 114);
+  // --c-prim-2: rgb(179, 179, 179);
+  // --c-prim-3: rgb(197, 197, 197);
+  // --c-prim-4: rgb(65, 65, 65);
+  // --c-white: rgb(88, 88, 88);
+
+  --c-prim-1: rgb(156, 136, 93);
+  --c-prim-2: rgb(201, 182, 131);
+  --c-prim-3: rgb(59, 32, 1);
+  --c-prim-4: rgb(117, 103, 72);
+  --c-white: rgb(182, 165, 123);
+  --c-azure-1: rgb(201, 182, 131);
+  --c-azure-2: rgb(156, 136, 93);
+  --c-azure-3: rgb(216, 201, 158);
+  --c-grey-1: rgb(156, 136, 93);
+  --popup-bg: blur(8px) brightness(60%);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--c-prim-4);
+}
+
+main {
+  padding: 3rem;
+}

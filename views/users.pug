@@ -1,0 +1,42 @@
+extends base
+
+block content
+    - if (user)
+        .content
+            .content__header
+                header.header.header--small
+                    h1.header__title.header__title--subpage Użytkownicy
+                    img.header__img.u-img-dark(src='img/tour-pic-8.jpg' alt='Zdjęcie Japonii')
+            .search-options
+                form.search.search-form.search-users
+                    input#searching.search__input(type='text' placeholder='Szukaj... (adres email)' required='')
+                    button.search__button
+                        img(src='img/icons/search--v1.png')
+                select#sort.select-tag.select-tag-users
+                    option.select-tag__item Sortowanie
+                    option A-Z
+                    option Z-A
+                    option Najnowsze
+                    option Najstarsze
+            .users
+                ul.users__list
+                    each user in users
+                        li.users__item
+                            span.users__data--big #{user.name}
+                            span.users__data--big #{user.email}
+                            .users__actions
+                                a.users__actions-item(href=`/user/${user.id}`)
+                                    img.users__actions-pic(src='img/icons/settings.png' title='Więcej')
+                    
+            .u-space
+            .content__paginate.page
+                img.page-arrow#previous(src='/img/icons/circled-chevron-left--v1.png')
+                input#pageNumber.page-number(type='text' placeholder='1')
+                img.page-arrow#next(src='/img/icons/circled-chevron-right--v1.png')
+
+            p(style='display: none' id='sumObjects') #{sum}
+
+            include _footer
+
+    - else
+        h1.centered-error Prosze się zalogować

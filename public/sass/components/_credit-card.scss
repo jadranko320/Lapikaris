@@ -1,0 +1,64 @@
+.credit-card {
+  background-image: url(../../img/cc-bg.jpg);
+  background-size: cover;
+  width: 35rem;
+  height: 22rem;
+  border-radius: 20px;
+  margin-left: -20rem;
+  margin-top: -10rem;
+  padding: 2rem;
+
+  @include respond(phone) {
+    background-image: none;
+    margin-left: -2rem;
+    margin-bottom: -7rem;
+    margin-top: -14rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    font-size: 1.6rem;
+    border: none;
+    background-color: rgba(211, 211, 211, 0.781);
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem;
+    text-align: center;
+
+    @include respond(phone) {
+      font-size: 1.7rem;
+      padding: 1rem;
+      margin: 0.5rem;
+    }
+
+    &:placeholder-shown {
+      text-align: center;
+    }
+  }
+
+  &__label {
+    transform: translate(-10rem, 2rem);
+    margin-top: -12rem;
+    margin-bottom: -3rem;
+
+    @include respond(phone) {
+      transform: translate(-6rem, 1rem);
+    }
+  }
+
+  &__number {
+    width: 20rem;
+  }
+
+  &__date {
+    width: 7rem;
+  }
+
+  &__ccv {
+    width: 6rem;
+  }
+}

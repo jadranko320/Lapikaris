@@ -1,0 +1,22 @@
+.alert {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 10px;
+  z-index: 5;
+  font-weight: 600;
+
+  &--success {
+    background-color: #4fad02;
+  }
+
+  &--error {
+    background-color: #e06c00;
+  }
+}

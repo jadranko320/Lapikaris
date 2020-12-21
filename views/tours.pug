@@ -1,0 +1,60 @@
+extends base
+
+block append head
+    script(type="text/javascript" src="/js/jquery-1.11.3.min.js")
+    script(type="text/javascript" src="/js/jquery.vmap.js")
+    script(type="text/javascript" src="/js/jquery.vmap.world.js")
+
+block content
+    - if (user)
+        .content
+            .content__header
+                header.header.header--small
+                    h1.header__title.header__title--subpage Wycieczki
+                    img.header__img.u-img-dark(src='img/japan-1.jpg' alt='Zdjęcie Japonii')
+            .map
+                #vmap.map-style(style='width: 700px; height: 500px')
+            .search-options
+                form.search.search-form.search-tours
+                    input.search__input#searching(type='text' placeholder='Szukaj... (nazwa kraju)' required='')
+                    button.search__button
+                        img(src='img/icons/search--v1.png')
+                select#sort.select-tag.select-tag-tours
+                    option.select-tag__item Sortowanie
+                    option A-Z
+                    option Z-A
+                    option Najnowsze
+                    option Najstarsze
+                a.add-tour(href='/add-tour')
+                    img(src='img/icons/plus-math-v2.png')
+            .tours
+                ul.tours__list
+                    - const idArr = [];
+                    each tour in tours
+                        li.tours__item
+                            span.tours__data--big #{tour.country}
+                            span.tours__data--big #{tour.price} PLN
+                            .tours__actions
+                                a.tours__actions-item(href=`tour/${tour.countrySlug}`)
+                                    img.tours__actions-pic(src='img/icons/visible.png' title='Podgląd')
+                                a.tours__actions-item(href=`edit-tour/${tour.id}`)
+                                    img.tours__actions-pic(src='img/icons/settings.png' title='Edycja')
+
+                        - idArr.push(`${tour.id}`)
+            p(style='display: none' id='idArr') #{idArr}
+
+
+            .u-space
+            .content__paginate.page
+                img.page-arrow#previous(src='/img/icons/circled-chevron-left--v1.png')
+                input#pageNumber.page-number(type='text' placeholder='1')
+                img.page-arrow#next(src='/img/icons/circled-chevron-right--v1.png')
+
+            p(style='display: none' id='sumObjects') #{sum}
+
+            include _footer
+
+        script(src='/js/overview.js')
+
+    - else
+        h1.centered-error Prosze się zalogować

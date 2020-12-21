@@ -1,0 +1,42 @@
+.content {
+  &__paginate {
+    margin-top: -5rem;
+    margin-bottom: 5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.properties {
+  margin: 5rem 0;
+  display: flex;
+  justify-content: space-evenly;
+
+  @include respond(tab) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.sliders-form {
+  width: 30%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  @include respond(tab) {
+    width: 60%;
+    height: 30vh;
+  }
+}
+
+.map-style {
+  @include respond(phone) {
+    display: none;
+  }
+}

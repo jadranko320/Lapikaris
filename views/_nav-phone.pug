@@ -1,0 +1,63 @@
+.nav-phone
+  .nav-phone__content
+    a#closeNav.popup__close(href='#') &times;
+
+    - if (user)
+      .profile
+        figure.profile__circle
+          img.profile__img(src=`/img/users/${user.photo}` aly='Person on a tour')
+          figcaption.profile__caption
+            a.profile__link(href='/my-account') #{user.name}
+
+    - if (!user)
+      ul.side-nav
+        li.side-nav__item
+          a.side-nav__link(href='#popupLogin')
+            span Logowanie
+        li.side-nav__item
+          a.side-nav__link(href='#popupSignup')
+            span Rejestracja
+
+    ul.side-nav
+      li.side-nav__item
+        a.side-nav__link(href='/overview')
+          img.side-nav__icon(src='/img/icons/geography--v1.png')
+          span Pełna oferta
+      li.side-nav__item
+        a.side-nav__link(href='#')
+          img.side-nav__icon(src='/img/icons/palm-tree.png')
+          span Wakacje / Lato 2021
+      li.side-nav__item
+        a.side-nav__link(href='#')
+          img.side-nav__icon(src='/img/icons/winter.png')
+          span Ferie zimowe 2021
+      li.side-nav__item
+        a.side-nav__link(href='#')
+          img.side-nav__icon(src='/img/icons/museum--v1.png')
+          span Wycieczki krajoznawcze
+      li.side-nav__item
+        a.side-nav__link(href='#')
+          img.side-nav__icon(src='/img/icons/coconut-cocktail.png')
+          span Wycieczki egzotyczne
+
+    - if (user && user.role === 'admin')
+      ul.side-nav
+        li.side-nav__item
+          a.side-nav__link(href='/users')
+            span Użytkownicy
+        li.side-nav__item
+          a.side-nav__link(href='/tours')
+            span Wycieczki
+        li.side-nav__item
+          a.side-nav__link(href='/orders')
+            span Zamówienia
+
+    - if (user)
+      ul.side-nav
+        li.side-nav__item
+          a.side-nav__link#logout(href='#')
+            span Wyloguj
+
+    img#dark-mode-toggle-phone.darkModeToogle(src='/img/icons/sun.png')
+  .nav-phone__btn
+    img(src='/img/icons/squared-menu--v1.png')

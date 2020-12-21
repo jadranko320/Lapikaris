@@ -1,0 +1,81 @@
+extends base
+
+block content
+    - if (user)
+        .content
+            .content__header
+                img.edit-tour-buttons__img(src="/img/icons/trash-35.png" title="Usuń wycieczkę")
+                header.header.header--small
+                    h1.header__title.header__title--subpage #{tour.country}
+                    img.header__img.u-img-dark(src=`/img/tours/${tour.gallery[0]}` alt=`${tour.country}`)
+            form.edit-tour-form.editt-tour-form
+                .edit-tour
+                    .edit-tour__section
+                        input#country.edit-tour__input(type='text' placeholder=`Kraj (obecnie: ${tour.country})`)
+                        label.edit-tour__label(for='country') Kraj (obecnie: #{tour.country})
+
+                        input#english.edit-tour__input(type='text' placeholder=`Kraj po angielsku (obcenie: ${tour.english})`)
+                        label.edit-tour__label(for='english') Kraj po angielsku (obcenie: #{tour.english})
+
+                        input#city.edit-tour__input(type='text' placeholder=`Docelowa lokalizacja (obecnie: ${tour.city})`)
+                        label.edit-tour__label(for='city') Docelowa lokalizacja (obecnie: #{tour.city})
+
+                        select#category.feeding-tag
+                            option.feeding-tag__item Kategoria
+                            option Wakacje
+                            option Ferie zimowe
+                            option Wycieczka krajoznawcza
+                            option Wycieczka egoztyczna
+
+                        input#startDate.edit-tour__input(type='text' placeholder=`Data rozpoczęcia (obcenie: ${tour.startDate})`)
+                        label.edit-tour__label(for='startDate') Data rozpoczęcia (obcenie: #{tour.startDate})
+
+                    .edit-tour__section
+                        input#flight.edit-tour__input(type='text' placeholder=`Wylot (obecnie: ${tour.flight})`)
+                        label.edit-tour__label(for='flight') Wylot (obecnie: #{tour.flight})
+
+                        input#duration.edit-tour__input(type='text' placeholder=`Czas trwania (dni) (obecnie: ${tour.duration})`)
+                        label.edit-tour__label(for='duration') Czas trwania (dni) (obecnie: #{tour.duration})
+
+                        select#feeding.feeding-tag
+                            option.feeding-tag__item(value='') Wyżywienie
+                            option(value='') 2 posiłki
+                            option(value='') 3 posiłki
+                            option(value='') All Inclusive
+
+                        input#price.edit-tour__input(type='text' placeholder=`Cena (obecnie: ${tour.price} PLN)`)
+                        label.edit-tour__label(for='price') Cena (obecnie: #{tour.price} PLN)
+
+                        input#limit.edit-tour__input(type='text' placeholder=`Limit miejsc (obecnie: ${tour.limit})`)
+                        label.edit-tour__label(for='limit') Limit miejsc (obecnie: #{tour.limit})
+
+                .edit-tour-desc.attraction-1
+                    textarea#attraction-1-text.edit-tour-desc__text(cols='67' rows='4' placeholder='Opis atrakcji')
+                        | #{tour.descriptionText[0]}
+
+                .edit-tour-desc.attraction-2
+                    textarea#attraction-2-text.edit-tour-desc__text(cols='67' rows='4' placeholder='Opis atrakcji')
+                        | #{tour.descriptionText[1]}
+
+                .edit-tour-desc.attraction-3
+                    textarea#attraction-3-text.edit-tour-desc__text(cols='67' rows='4' placeholder='Opis atrakcji')
+                        | #{tour.descriptionText[2]}
+                        
+                .edit-tour-desc.attraction-4
+                    textarea#attraction-4-text.edit-tour-desc__text(cols='67' rows='4' placeholder='Opis atrakcji')
+                        | #{tour.descriptionText[3]}
+                
+                #addGallery.edit-tour__gallery
+                    | Edytuj galerię
+                    label
+                        input#addGalleryField(type='file' style='display: none;' multiple="multiple")
+                        img#addGalleryBtn.edit-tour__gallery--sign(src='/img/icons/plus-math.png' title='Dodaj zdjęcia do galerii')
+
+                button.edit-tour__button Zapisz
+
+            include _footer
+
+        script(src='/js/edit-tour.js')
+    
+    - else
+        h1.centered-error Prosze się zalogować

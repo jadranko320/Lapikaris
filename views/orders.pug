@@ -1,0 +1,67 @@
+extends base
+
+block append head
+    script(type="text/javascript" src="/js/jquery-1.11.3.min.js")
+    script(type="text/javascript" src="/js/jquery.vmap.js")
+    script(type="text/javascript" src="/js/jquery.vmap.world.js")
+
+block content
+    - if (user)
+        .content
+            .content__header
+                header.header.header--small.u-img-light
+                    h1.header__title.header__title--subpage Zamówienia
+                    video.header__video(autoplay='' muted='' loop='')
+                        source(src='/img/palmas.mp4' type='video/mp4')
+                        | Your browser is not supported!
+                        
+            .content__cards
+                - const idArrDelOrder = [];
+                each order in orders
+                    .card
+                        - if (order.tour)
+                            - if (order.tour.gallery)
+                                - if (order.tour.gallery[0])
+                                    img.card__img(src=`/img/tours/${order.tour.gallery[0]}` alt='Zdjęcie wycieczki 4')
+                            .card__title #{order.tour.country}
+                        ul.card__list
+                            li.card__item
+                                img.item__arrow(src='/img/icons/double-right--v1.png')
+                                span.card__item--b Imię i nazwisko:
+                                - if (order.user)
+                                    span #{order.user.name}
+                            li.card__item
+                                img.item__arrow(src='/img/icons/double-right--v1.png')
+                                span.card__item--b Data rozpoczęcia:
+                                span #{order.date}
+                            li.card__item
+                                img.item__arrow(src='/img/icons/double-right--v1.png')
+                                span.card__item--b Cena całkowita:
+                                span #{order.totalPrice} &nbsp;
+                                span PLN
+                            li.card__item
+                                img.item__arrow(src='/img/icons/double-right--v1.png')
+                                span.card__item--b Liczba dorosłych:
+                                span #{order.adults}
+                            li.card__item
+                                img.item__arrow(src='/img/icons/double-right--v1.png')
+                                span.card__item--b Liczba dzieci:
+                                span #{order.children}
+                        .btn.btn--beige
+                            a.card__link(href=`#` id=`${order.id}`) Usuń
+                        - idArrDelOrder.push(`${order.id}`)
+                        
+            .content__paginate.page
+                img.page-arrow#previous(src='/img/icons/circled-chevron-left--v1.png')
+                input#pageNumber.page-number(type='text' placeholder='1')
+                img.page-arrow#next(src='/img/icons/circled-chevron-right--v1.png')
+
+            p(style='display: none' id='sumObjects') #{sum}
+            p(style='display: none' id='idArrDelOrderInOrders') #{idArrDelOrder}
+
+            include _footer
+
+        script(src='/js/overview.js')
+
+    - else
+        h1.centered-error Prosze się zalogować

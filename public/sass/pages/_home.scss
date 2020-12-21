@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+}
+
+.sidebar {
+  background-color: var(--c-prim-1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &--left {
+    position: fixed;
+    height: 100vh;
+    width: 25rem;
+  }
+
+  &--right {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    width: 15rem;
+
+    justify-content: space-between;
+  }
+
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.content {
+  width: 100%;
+  margin-left: 25rem;
+  margin-right: 15rem;
+
+  @include respond(phone) {
+    margin: 0;
+  }
+
+  display: flex;
+  flex-direction: column;
+
+  &__cards {
+    padding: 5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    @include respond(phone) {
+      margin-top: -2rem;
+    }
+  }
+
+  &__more {
+    margin-top: -5rem;
+    margin-bottom: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

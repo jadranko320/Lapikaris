@@ -1,0 +1,32 @@
+.search {
+  margin-top: 5rem;
+
+  display: flex;
+
+  &__input {
+    width: 30rem;
+    font-size: 1.6rem;
+    background-color: var(--c-white);
+    border: none;
+    border-radius: 100px;
+    padding: 1.3rem 1rem 1rem 3rem;
+    color: var(--c-prim-3);
+
+    transition: all 0.5s;
+
+    &::-webkit-input-placeholder {
+      color: var(--c-prim-3);
+    }
+
+    &:focus {
+      transform: scale(1.1);
+    }
+  }
+
+  &__button {
+    border: none;
+    background-color: transparent;
+    transform: translate(-4rem, 0.3rem);
+    cursor: pointer;
+  }
+}

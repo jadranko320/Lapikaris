@@ -1,0 +1,90 @@
+.form {
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    background-color: var(--c-azure-1);
+    border: none;
+    border-radius: 5px;
+    border-bottom: 3px solid transparent;
+    width: 80%;
+    display: block;
+    z-index: 1;
+
+    &--small {
+      margin: -0.5rem;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 3px solid rgb(43, 211, 43);
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid rgb(238, 42, 42);
+    }
+
+    &::-webkit-input-placeholder {
+      color: var(--c-prim-3);
+    }
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 0.7rem;
+    margin-bottom: 2rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__textarea {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    background-color: var(--c-azure-3);
+    border: none;
+    border-radius: 7px;
+    resize: none;
+    margin-bottom: 5rem;
+
+    &:focus {
+      border: none;
+      background-color: var(--c-azure-1);
+    }
+  }
+}
+
+.tour-info {
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+}
+
+.change-data {
+  &__input {
+    width: 20rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background-color: var(--c-grey-1);
+    border: none;
+    border-radius: 100px;
+    padding-left: 1rem;
+  }
+
+  &__btn {
+    background-color: var(--c-grey-1);
+    border: none;
+    border-radius: 100px;
+    transform: translate(-3rem, 0.5rem);
+    cursor: pointer;
+  }
+}

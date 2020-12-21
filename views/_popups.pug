@@ -1,0 +1,118 @@
+#popupConfirmEmail.popup
+  .popup__bg.popup__bg--change-data
+  .popup__content
+    h2.popup__heading.popup__heading--margin-big
+      | Podaj swój nowy adres email
+    form.popup__form.data-form
+      a.popup__close(href='#') ×
+      input#emailConfirmEmail.form__input.form__input--small(type='email' placeholder='Adres email')
+      label.form__label(for='emailConfirmEmail') Adres email
+      button.btn.btn--azure Zmień
+#popupForgotPassword.popup
+  .popup__bg.popup__bg--change-data
+  .popup__content
+    h2.popup__heading.popup__heading--margin-big
+      | Odzyskiwanie hasła
+    form.popup__form.data-form.forgot-password-form
+      a.popup__close(href='#') ×
+      input#emailForgotPassword.form__input.form__input--small(type='email' placeholder='Adres email')
+      label.form__label(for='emailForgotPassword') Adres email
+      button.btn.btn--azure Akceptuj
+#popupResetPassword.popup
+  .popup__bg.popup__bg--login
+  .popup__content
+    h2.popup__heading Podaj nowe hasło
+    form.popup__form.reset-password-form
+      a.popup__close(href='#') ×
+      input#passwordResetPassword.form__input(type='password' placeholder='Hasło' required='')
+      label.form__label(for='passwordResetPassword') Hasło
+      input#passwordConfirmResetPassword.form__input(type='password' placeholder='Powtórz hasło' required='')
+      label.form__label(for='passwordConfirmResetPassword') Powtórz hasło
+      button.btn.btn--azure Zmień
+    a.info-popup__link(href='#popupForgotPassword')
+      span 
+#popupLogin.popup
+  .popup__bg.popup__bg--login
+  .popup__content
+    h2.popup__heading Logowanie do serwisu
+    form.popup__form.login-form
+      a.popup__close(href='#') ×
+      input#emailLogin.form__input(type='email' placeholder='Adres email' required='')
+      label.form__label(for='emailLogin') Adres email
+      input#passwordLogin.form__input(type='password' placeholder='Hasło' required='')
+      label.form__label(for='passwordLogin') Hasło
+      button.btn.btn--azure Zaloguj
+    a.info-popup__link(href='#popupForgotPassword')
+      span Zapomniałeś hasła? Odzyskaj je teraz!
+#popupSignup.popup
+  .popup__bg.popup__bg--signup
+  .popup__content
+    h2.popup__heading.u-mg-btm-plus Rejestracja w serwisie
+    form.popup__form.signup-form
+      a.popup__close(href='#') ×
+      input#emailSignup.form__input(type='email' placeholder='Adres email' required='')
+      label.form__label(for='emailSignup') Adres email
+      input#passwordSignup.form__input(type='password' placeholder='Hasło' required='')
+      label.form__label(for='passwordSignup') Hasło
+      input#passwordConfirmSignup.form__input(type='password' placeholder='Powtórz hasło' required='')
+      label.form__label(for='passwordConfirmSignup') Powtórz hasło
+      button.btn.btn--azure Rejestruj
+    a.info-popup__link.u-margin-min(href='#')
+      span Rejestrując się, akceptujesz regulamin
+    a.info-popup__link(href='#popupLogin')
+      span Masz już konto? Zaloguj się!
+#popupChangePassword.popup
+  .popup__bg.popup__bg--change-data
+  .popup__content
+    h2.popup__heading.popup__heading--margin-small Zmiana hasła
+    form.popup__form.data-form.change-password-form
+      a.popup__close(href='#') ×
+      input#passwordChangePassword.form__input(type='password' placeholder='Hasło')
+      label.form__label(for='passwordChangePassword') Hasło
+      input#newPasswordChangePassword.form__input(type='password' placeholder='Nowe hasło')
+      label.form__label(for='newPasswordChangePassword') Nowe hasło
+      input#passwordConfirmChangePassword.form__input(type='password' placeholder='Potwierdź hasło')
+      label.form__label(for='passwordConfirmChangePassword') Potwierdź hasło
+      button.btn.btn--azure Zmień
+#popupChangeEmail.popup
+  .popup__bg.popup__bg--change-data
+  .popup__content
+    h2.popup__heading.popup__heading--margin-big Zmiana adresu email
+    form.popup__form.data-form.change-email-form
+      a.popup__close(href='#') ×
+      input#emailChangeEmail.form__input.form__input--small(type='email' placeholder='Adres email')
+      label.form__label(for='emailChangeEmail') Adres email
+      button.btn.btn--azure Zmień
+#popupChangeProfilePic.popup
+  .popup__bg.popup__bg--change-data
+  .popup__content
+    h2.popup__heading.popup__heading--margin-big Dodaj zdjęcie profilowe
+    form.popup__form.data-form.change-profile-pic-form
+      a.popup__close(href='#') ×
+      label
+        input#photoPic(type='file' style='display: none;')
+        a.user-info__link(style='cursor: pointer; font-size: 1.5rem') Kliknij tu aby wybrać zdjęcie
+      .u-space
+      button.btn.btn--azure Zmień
+#popupChangeName.popup
+  .popup__bg.popup__bg--change-data
+  .popup__content
+    h2.popup__heading.popup__heading--margin-big Podaj imię i nazwisko
+    form.popup__form.data-form.change-name-form
+      a.popup__close(href='#') ×
+      input#nameChangeName.form__input.form__input--small(type='text' placeholder='Imię i nazwisko')
+      label.form__label(for='nameChangeName') Imię i nazwisko
+      button.btn.btn--azure Zmień
+#popupChangeData.popup
+  .popup__bg.popup__bg--change-data
+  .popup__content
+    h2.popup__heading Zmiana danych logowania
+    form.popup__form.data-form
+      a.popup__close(href='#') ×
+      input#emailChangeData.form__input(type='email' placeholder='Adres email')
+      label.form__label(for='emailChangeData') Adres email
+      input#passwordGenChangeData.form__input(type='password' placeholder='Hasło')
+      label.form__label(for='passwordGenChangeData') Hasło
+      img#generate.generate-key(src='/img/icons/key--v1.png' title='Generuj hasło')
+      button.btn.btn--azure Zmień
+    span Wpisz jedynie dane, które chcesz zmienić!

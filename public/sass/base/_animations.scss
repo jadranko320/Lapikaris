@@ -1,0 +1,54 @@
+@keyframes moveLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+// animation: flash 3s infinite;
+@keyframes flash {
+  0% {
+    color: var(--c-prim-3);
+  }
+
+  50% {
+    color: #f00;
+  }
+
+  100% {
+    color: var(--c-prim-3);
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: rotate(-360deg);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Lapikaris - spełniaj marzenia</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="sidebar sidebar--left">
+        <a href="index.html">
+          <div class="side-logo">
+            <img
+              src="img/logo.png"
+              alt="Logo"
+              class="side-logo__image"
+              title="Designed by Freepik / www.freepik.com"
+            />
+          </div>
+        </a>
+
+        <ul class="side-nav">
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <img
+                src="https://img.icons8.com/material/30/3B2001/geography--v1.png"
+                class="side-nav__icon"
+              />
+              <span>Pełna oferta</span>
+            </a>
+          </li>
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <img
+                src="https://img.icons8.com/material/30/3B2001/palm-tree.png"
+                class="side-nav__icon"
+              />
+              <span>Wakacje / Lato 2021</span>
+            </a>
+          </li>
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <img
+                src="https://img.icons8.com/material/30/3B2001/winter.png"
+                class="side-nav__icon"
+              />
+              <span>Ferie zimowe 2021</span>
+            </a>
+          </li>
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <img
+                src="https://img.icons8.com/material/30/3B2001/museum--v1.png"
+                class="side-nav__icon"
+              />
+              <span>Wycieczki krajoznawcze</span>
+            </a>
+          </li>
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <img
+                src="https://img.icons8.com/ios-filled/30/3B2001/coconut-cocktail.png"
+                class="side-nav__icon"
+              />
+              <span>Wycieczki egzotyczne</span>
+            </a>
+          </li>
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <img
+                src="https://img.icons8.com/ios-filled/30/3B2001/airplane-take-off.png"
+                class="side-nav__icon"
+              />
+              <span>Loty</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="sidebar sidebar--right u-text-center">
+        <ul class="side-nav">
+          <li class="side-nav__item">
+            <a href="#popupLogin" class="side-nav__link">
+              <span>Logowanie</span>
+            </a>
+          </li>
+          <li class="side-nav__item">
+            <a href="#popupSignup" class="side-nav__link">
+              <span>Rejestracja</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="profile">
+          <figure class="profile__circle">
+            <img
+              src="img/user-1.jpg"
+              aly="Person on a tour"
+              class="profile__img"
+            />
+            <figcaption class="profile__caption">
+              <a href="#" class="profile__link">Marc Smith</a>
+            </figcaption>
+          </figure>
+        </div>
+
+        <ul class="side-nav">
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <span>Użytkownicy</span>
+            </a>
+          </li>
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <span>Wycieczki</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- <div class="ad">
+          <img src="img/ad.png" alt="Reklama" class="ad__content" />
+        </div> -->
+
+        <ul class="side-nav">
+          <li class="side-nav__item">
+            <a href="#" class="side-nav__link">
+              <span>Wyloguj</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="popup" id="popupLogin">
+        <div class="popup__bg popup__bg--login"></div>
+        <div class="popup__content">
+          <h2 class="popup__heading">Logowanie do serwisu</h2>
+
+          <form class="popup__form login-form">
+            <a href="#" class="popup__close">&times;</a>
+            <input
+              type="email"
+              class="form__input"
+              placeholder="Adres email"
+              id="email"
+              required
+            />
+            <label for="email" class="form__label">Adres email</label>
+
+            <input
+              type="password"
+              class="form__input"
+              placeholder="Hasło"
+              id="password"
+              required
+            />
+            <label for="password" class="form__label">Hasło</label>
+
+            <button class="btn btn--azure">Zaloguj</button>
+          </form>
+
+          <a href="#popupPassword" class="info-popup__link">
+            <span>Zapomniałeś hasła? Odzyskaj je teraz!</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="popup" id="popupPassword">
+        <div class="popup__bg popup__bg--login"></div>
+        <div class="popup__content">
+          <h2 class="popup__heading">Odzyskiwanie hasła</h2>
+
+          <form class="popup__form login-form">
+            <a href="#" class="popup__close">&times;</a>
+            <input
+              type="email"
+              class="form__input"
+              placeholder="Adres email"
+              id="email"
+              required
+            />
+            <label for="email" class="form__label">Adres email</label>
+
+            <button class="btn btn--azure">Odzyskaj</button>
+          </form>
+
+          <a href="#" class="info-popup__link">
+            <span>Sprawdź swój adres email</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="popup" id="popupSignup">
+        <div class="popup__bg popup__bg--signup"></div>
+        <div class="popup__content">
+          <h2 class="popup__heading">Rejestracja w serwisie</h2>
+
+          <form class="popup__form signup-form">
+            <a href="#" class="popup__close">&times;</a>
+            <input
+              type="email"
+              class="form__input"
+              placeholder="Adres email"
+              id="email"
+              required
+            />
+            <label for="email" class="form__label">Adres email</label>
+
+            <input
+              type="password"
+              class="form__input"
+              placeholder="Hasło"
+              id="password"
+              required
+            />
+            <label for="password" class="form__label">Hasło</label>
+
+            <button class="btn btn--azure">Rejestruj</button>
+          </form>
+
+          <a href="#popupLogin" class="info-popup__link">
+            <span>Masz już konto? Zaloguj się!</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="popup" id="popupOrder">
+        <div class="popup__bg popup__bg--login"></div>
+        <div class="popup__content--order">
+          <a href="#" class="popup__close">&times;</a>
+          <h2 class="popup__heading--order">Podsumowanie</h2>
+          <div class="order-info">
+            <div class="order-info__tour">
+              <div class="order-info__name">Japonia - Tokio</div>
+              <div><span>Wylot:</span>Warszawa - Lotnisko Chopina - 18:45</div>
+              <div id="term"><span>Termin:</span>14.07.2021</div>
+              <div id="adults"><span>Liczba dorosłych:</span>1</div>
+              <div id="children"><span>Liczba dzieci:</span>1</div>
+            </div>
+            <div class="order-info__user">
+              <div class="order-info__name">Adrian Sikora</div>
+              <div id="numberForm"><span>Nr tel.:</span>739904444</div>
+              <div class="change-c-d" id="changeNumberOrder">
+                Zmień numer telefonu
+              </div>
+              <div id="emailForm"><span>Email:</span>jadranko320@gmai.com</div>
+              <div class="change-c-d" id="changeEmailOrder">
+                Zmień adres email
+              </div>
+            </div>
+          </div>
+          <button class="btn btn--azure">Dalej</button>
+          <a href="#" class="info-popup__link u-margin-min u-margin-top">
+            <span>Kupując, akceptujesz regulamin</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="content__header">
+          <header class="header header--medium">
+            <h1 class="header__title header__title--subpage">Japonia</h1>
+            <img
+              src="img/japan-1.jpg"
+              alt="Zdjęcie Japonii"
+              class="header__img u-img-dark"
+            />
+          </header>
+        </div>
+
+        <div class="tour-content">
+          <div class="tour-properties">
+            <ul class="prop__list">
+              <li class="prop__item">
+                <img
+                  src="https://img.icons8.com/material/35/3B2001/marker--v1.png"
+                  class="prop__icon"
+                />
+                <span class="card__item--b">Docelowa lokalizacja:</span>
+                <span>Tokio</span>
+              </li>
+              <li class="prop__item">
+                <img
+                  src="https://img.icons8.com/material/35/3B2001/today--v1.png"
+                  class="prop__icon"
+                />
+                <span class="card__item--b">Data rozpoczęcia:</span>
+                <!-- <span>14.07.2021</span> -->
+                <div class="radio-toolbar">
+                  <input
+                    type="radio"
+                    id="firstDate"
+                    name="date"
+                    checked
+                    value="14.07.2021"
+                  />
+                  <label for="firstDate">14.07.2021</label>
+                  <input
+                    type="radio"
+                    id="secondDate"
+                    name="date"
+                    value="06.08.2021"
+                  />
+                  <label for="secondDate">06.08.2021</label>
+                </div>
+              </li>
+              <li class="prop__item">
+                <img
+                  src="https://img.icons8.com/material-outlined/35/3B2001/wall-clock.png"
+                  class="prop__icon"
+                />
+                <span class="card__item--b">Liczba dni:</span>
+                <span>14</span>
+              </li>
+              <li class="prop__item">
+                <img
+                  src="https://img.icons8.com/ios-glyphs/35/3B2001/airplane-take-off.png"
+                  class="prop__icon"
+                />
+                <span class="card__item--b">Wylot:</span>
+                <span>Warszawa - Lotnisko Chopina</span>
+              </li>
+              <li class="prop__item">
+                <img
+                  src="https://img.icons8.com/material/35/3B2001/cutlery--v2.png"
+                  class="prop__icon"
+                />
+                <span class="card__item--b">Wyżywienie:</span>
+                <span>All Inclusive</span>
+              </li>
+            </ul>
+          </div>
+          <div class="tour-shopping">
+            <div class="tour-shopping__price">3499 PLN</div>
+            <form class="shopping-form">
+              <d class="shopping-form__group">
+                <input
+                  type="number"
+                  class="shopping-form__input"
+                  id="numberOfAdult"
+                  value="1"
+                  required
+                />
+                <label for="numberOfAdult" class="shopping-form__label"
+                  >Liczba dorosłych</label
+                >
+              </d>
+              <div class="shopping-form__group">
+                <input
+                  type="number"
+                  class="shopping-form__input"
+                  id="numberOfChildren"
+                  value="1"
+                  required
+                />
+                <label for="numberOfChildren" class="shopping-form__label"
+                  >Liczba dzieci</label
+                >
+              </div>
+              <a href="#popupOrder" class="btn btn--beige btn--beige--big"
+                >Kup teraz</a
+              >
+            </form>
+          </div>
+        </div>
+
+        <div class="tour-description">
+          <div class="tour-description__photo">
+            <img
+              src="img/japan-3.jpg"
+              alt="Zdjęcie wycieczki"
+              class="tour-description__img"
+            />
+          </div>
+          <p class="paragraph">
+            Pharetra et ultrices neque ornare aenean euismod elementum. Sit amet
+            mauris commodo quis imperdiet. Consectetur adipiscing elit duis
+            tristique sollicitudin nibh sit amet. Eget velit aliquet sagittis id
+            consectetur purus ut. In iaculis nunc sed augue lacus viverra vitae
+            congue. Tincidunt vitae semper quis lectus nulla at volutpat diam.
+            Sed lectus vestibulum mattis ullamcorper.
+          </p>
+        </div>
+
+        <div class="tour-description">
+          <div class="tour-description__photo">
+            <img
+              src="img/japan-2.jpg"
+              alt="Zdjęcie wycieczki"
+              class="tour-description__img"
+            />
+          </div>
+          <p class="paragraph">
+            Neque laoreet suspendisse interdum consectetur libero id faucibus
+            nisl tincidunt. Volutpat lacus laoreet non curabitur gravida arcu
+            ac. Maecenas volutpat blandit aliquam etiam. Pharetra diam sit amet
+            nisl suscipit adipiscing bibendum est ultricies. Maecenas ultricies
+            mi eget mauris pharetra et. Purus in massa tempor nec feugiat nisl
+            pretium fusce. Eget egestas purus viverra accumsan in nisl. Nunc vel
+            risus commodo viverra maecenas accumsan lacus vel.
+          </p>
+        </div>
+
+        <div class="tour-description">
+          <div class="tour-description__photo">
+            <img
+              src="img/japan-4.jpg"
+              alt="Zdjęcie wycieczki"
+              class="tour-description__img"
+            />
+          </div>
+          <p class="paragraph">
+            Neque laoreet suspendisse interdum consectetur libero id faucibus
+            nisl tincidunt. Volutpat lacus laoreet non curabitur gravida arcu
+            ac. Maecenas volutpat blandit aliquam etiam. Pharetra diam sit amet
+            nisl suscipit adipiscing bibendum est ultricies. Maecenas ultricies
+            mi eget mauris pharetra et. Purus in massa tempor nec feugiat nisl
+            pretium fusce. Eget egestas purus viverra accumsan in nisl. Nunc vel
+            risus commodo viverra maecenas accumsan lacus vel. Eget nulla
+            facilisi etiam dignissim diam quis enim lobortis. Lectus magna
+            fringilla urna porttitor rhoncus dolor. Pharetra et ultrices neque
+            ornare aenean euismod elementum.
+          </p>
+        </div>
+
+        <section class="gallery">
+          <img src="img/tour-pic-1.jpg" alt="Zdjęcie" class="gallery__item" />
+          <img src="img/tour-pic-2.jpg" alt="Zdjęcie" class="gallery__item" />
+          <img src="img/tour-pic-3.jpg" alt="Zdjęcie" class="gallery__item" />
+          <img src="img/tour-pic-4.jpg" alt="Zdjęcie" class="gallery__item" />
+          <img src="img/tour-pic-5.jpg" alt="Zdjęcie" class="gallery__item" />
+          <img src="img/tour-pic-6.jpg" alt="Zdjęcie" class="gallery__item" />
+          <img src="img/tour-pic-7.jpg" alt="Zdjęcie" class="gallery__item" />
+          <img src="img/tour-pic-8.jpg" alt="Zdjęcie" class="gallery__item" />
+          <img src="img/tour-pic-9.jpg" alt="Zdjęcie" class="gallery__item" />
+        </section>
+
+        <section class="reviews">
+          <div class="review">
+            <div class="profile">
+              <figure class="profile__circle">
+                <img src="img/user-5.jpeg" alt="User" class="profile__img" />
+                <figcaption class="profile__caption">
+                  <a href="#" class="profile__link">Lora Robbie</a>
+                </figcaption>
+              </figure>
+              <span class="date">21.09.2021</span>
+            </div>
+
+            <div class="review__content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam odio
+              ipsa earum iste magni eaque, enim perferendis qui laboriosam
+              dolorem reiciendis accusantium odit placeat, ab dolores. Quo alias
+              veritatis consequuntur. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Nam odio ipsa earum iste magni eaque, enim
+              perferendis qui laboriosam dolorem reiciendis accusantium odit
+              placeat, ab dolores. Quo alias veritatis consequuntur.
+            </div>
+
+            <div class="review__icons">
+              <img
+                src="https://img.icons8.com/ios-glyphs/40/3B2001/quote-right.png"
+                class="review__icons--quote"
+              />
+              <div class="review__icons--rating">
+                <img
+                  src="https://img.icons8.com/material/24/3B2001/happy--v1.png"
+                  class="review__icons--like"
+                />
+                <span class="review__icons--rate">65</span>
+                <img
+                  src="https://img.icons8.com/material/24/3B2001/sad--v1.png"
+                  class="review__icons--like"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="review">
+            <div class="profile">
+              <figure class="profile__circle">
+                <img src="img/user-3.jpg" alt="User" class="profile__img" />
+                <figcaption class="profile__caption">
+                  <a href="#" class="profile__link">Tom Waller</a>
+                </figcaption>
+              </figure>
+              <span class="date">13.08.2021</span>
+            </div>
+
+            <div class="review__content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam odio
+              ipsa earum iste magni eaque, enim perferendis qui laboriosam
+              dolorem reiciendis accusantium odit placeat, ab dolores. Quo alias
+              veritatis consequuntur.
+            </div>
+
+            <div class="review__icons">
+              <img
+                src="https://img.icons8.com/ios-glyphs/40/3B2001/quote-right.png"
+                class="review__icons--quote"
+              />
+              <div class="review__icons--rating">
+                <img
+                  src="https://img.icons8.com/material/24/3B2001/happy--v1.png"
+                  class="review__icons--like"
+                />
+                <span class="review__icons--rate">13</span>
+                <img
+                  src="https://img.icons8.com/material/24/3B2001/sad--v1.png"
+                  class="review__icons--like"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="content__more">
+          <div class="btn btn--beige--big">
+            <a href="#" class="link">Zarezerwuj</a>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a href="" class="footer__link">Regulamin</a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link">FAQ</a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link">Autor</a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link">Prawa autorskie</a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link">Kontakt</a>
+            </li>
+          </ul>
+
+          <img
+            src="img/logo.png"
+            alt="Logo"
+            class="footer__img"
+            title="Designed by Freepik / www.freepik.com"
+          />
+
+          <div class="footer__desc">
+            Praca została wykonana przez Adriana Sikorę, na potrzeby obrony
+            tytułu inżyniera.
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/tour.js" charset="utf-8"></script>
+    <script
+      type="text/javascript"
+      src="js/darkmode.js"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

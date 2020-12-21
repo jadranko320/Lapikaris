@@ -1,0 +1,72 @@
+.footer {
+  width: 100%;
+  padding: 4rem;
+  background-color: var(--c-prim-1);
+  text-align: center;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  &__img {
+    height: 7rem;
+    margin: 0 4rem;
+
+    @include respond(phone) {
+      margin: 1rem 0 2rem 0;
+    }
+  }
+
+  &__list {
+    width: 30%;
+    display: inline-block;
+
+    @include respond(phone) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    list-style: none;
+
+    @include respond(phone) {
+      display: flex;
+      justify-content: center;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      font-weight: 600;
+
+      @include respond(phone) {
+        transform: scale(1);
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    padding: 1rem;
+    color: var(--c-prim-3);
+    font-size: 1.5rem;
+  }
+
+  &__desc {
+    width: 30%;
+    color: var(--c-prim-3);
+    font-size: 1.5rem;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+}

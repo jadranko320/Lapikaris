@@ -1,0 +1,122 @@
+extends base
+
+block append features
+    - if (user)
+        - if (user.name && user.phone && user.code && user.city && user.address)
+            #popupOrder.popup
+                .popup__bg.popup__bg--login
+                .popup__content--order
+                    a.popup__close(href='#') ×
+                    h2.popup__heading--order Podsumowanie
+                    .order-info
+                        .order-info__tour
+                            .order-info__name #{tour.country} - #{tour.city}
+                            div
+                                span Wylot:
+                                | #{tour.flight}
+                            #term
+                                span Termin:
+                                | #{tour.startDate}
+                            #adults
+                                span Liczba dorosłych:
+                                | 1
+                            #children
+                                span Liczba dzieci:
+                                | 1
+                        .order-info__user
+                            .order-info__name #{user.name}
+                            #numberForm
+                                span Nr tel.:
+                                | #{user.phone}
+                            #emailForm
+                                span Email:
+                                | #{user.email}
+                            #addressForm
+                                span Adres:
+                                | #{user.address}, #{user.code} #{user.city}
+                    button.btn.btn--azure(style='text-decoration: none; color: #000; font-size: 1.4rem;' id='make-pay-tour' data-tour-id=`${tour.id}`) Dalej
+                    a.info-popup__link.u-margin-min.u-margin-top(href='#')
+                        span Kupując, akceptujesz regulamin
+
+block content
+    .content
+        .content__header
+            header.header.header--medium
+                h1.header__title.header__title--subpage #{tour.country}
+                img.header__img.u-img-dark(src=`/img/tours/${tour.gallery[0]}` alt=`${tour.country}`)
+        .tour-content
+            .tour-properties
+                ul.prop__list
+                    li.prop__item
+                        img.prop__icon(src='/img/icons/marker--v1.png')
+                        span.card__item--b Docelowa lokalizacja:
+                        span #{tour.city}
+                    li.prop__item
+                        img.prop__icon(src='/img/icons/today--v1.png')
+                        span.card__item--b Data rozpoczęcia:
+                        span #{tour.startDate}
+                    li.prop__item
+                        img.prop__icon(src='/img/icons/wall-clock.png')
+                        span.card__item--b Liczba dni:
+                        span #{tour.duration}
+                    li.prop__item
+                        img.prop__icon(src='/img/icons/airplane-take-off.png')
+                        span.card__item--b Wylot:
+                        span #{tour.flight}
+                    li.prop__item
+                        img.prop__icon(src='/img/icons/cutlery--v2.png')
+                        span.card__item--b Wyżywienie:
+                        span #{tour.feeding}
+            .tour-shopping
+                .tour-shopping__price #{tour.price} PLN
+                form.shopping-form
+                    d.shopping-form__group
+                        input#numberOfAdult.shopping-form__input(type='number' value='1' required='')
+                        label.shopping-form__label(for='numberOfAdult') Liczba dorosłych
+                    .shopping-form__group
+                        input#numberOfChildren.shopping-form__input(type='number' value='1' required='')
+                        label.shopping-form__label(for='numberOfChildren') Liczba dzieci
+                    - if (user)
+                        - if (!user.name || !user.phone || !user.code || !user.city || !user.address)
+                            a.btn.btn--beige.btn--beige--big(href='/my-account') Podaj dane 
+                        - else
+                            a.btn.btn--beige.btn--beige--big(href='#popupOrder') Kup teraz
+                    - else
+                        a.btn.btn--beige.btn--beige--big(href='#popupLogin') Zaloguj się 
+                    
+        - for (let i = 0; i < 4; i++) {
+            .tour-description
+                .tour-description__photo
+                    img.tour-description__img(src=`/img/tours/${tour.gallery[i+1]}` alt='Zdjęcie wycieczki')
+                p.paragraph #{tour.descriptionText[i]}
+        - }
+
+        section.gallery
+            - for (let i = 5; i < tour.gallery.length; i++)
+                img.gallery__item(src=`/img/tours/${tour.gallery[i]}` alt='Zdjęcie')
+
+        section.reviews
+            each review in reviews
+                .review
+                    .profile
+                        figure.profile__circle
+                            - const photo = review.user.photo ? review.user.photo : 'profile-pic.png'
+                            img.profile__img(src=`/img/users/${photo}` alt='User')
+                            figcaption.profile__caption
+                                - const name = review.user.name ? review.user.name.split(' ')[0] : 'User';
+                                a.profile__link(href='#') #{name}
+                        - const date = review.createdAt.toLocaleDateString();
+                        span.date #{date}
+                    .review__content #{review.review}
+                    .review__icons
+                        img.review__icons--quote(src='/img/icons/quote-right.png')
+
+        .content__more
+            .btn.btn--beige--big
+                a.link(href='#') Zarezerwuj
+
+        p(style='display: none' id='tourIdk') #{tour.id}
+
+        include _footer
+
+    script(src='/js/tour.js')

@@ -1,0 +1,49 @@
+extends base
+
+block content
+    .content
+        .content__header
+            header.header.header--big.u-img-light
+                h1.header__title
+                    span.header__title--main Lapikaris
+                    span.header__title--sub Spełniaj marzenia
+                video.header__video(autoplay='' muted='' loop='')
+                    source(src='/img/mountain.mp4' type='video/mp4')
+                    | Twoja przeglądarka nie wspiera filmów mp4 na naszej stronie!
+        .content__cards
+            each tour in tours
+                .card
+                    img.card__img(src=`/img/tours/${tour.gallery[0]}` alt='Zdjęcie wycieczki 4')
+                    .card__title #{tour.country}
+                    ul.card__list
+                        li.card__item
+                            img.item__arrow(src='/img/icons/double-right--v1.png')
+                            span.card__item--b Data rozpoczęcia:
+                            span #{tour.startDate}
+                        li.card__item
+                            img.item__arrow(src='/img/icons/double-right--v1.png')
+                            span.card__item--b Liczba dni:
+                            span #{tour.duration}
+                        li.card__item
+                            img.item__arrow(src='/img/icons/double-right--v1.png')
+                            span.card__item--b Wylot:
+                            span #{tour.flight.split(' - ')[0]}
+                        li.card__item
+                            img.item__arrow(src='/img/icons/double-right--v1.png')
+                            span.card__item--b Wyżywienie:
+                            span #{tour.feeding}
+                        li.card__item
+                            img.item__arrow(src='/img/icons/double-right--v1.png')
+                            span.card__item--b Lokalizacja:
+                            span #{tour.city}
+                    .card__price
+                        span.card__price--main #{tour.price} PLN
+                        span.card__price--sub / os
+                    .btn.btn--beige
+                        a.card__link(href=`/tour/${tour.countrySlug}`) Więcej
+                    
+        .content__more
+            .btn.btn--beige--big
+                a.link(href='/overview') Więcej ofert
+
+        include _footer
