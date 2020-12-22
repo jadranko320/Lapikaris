@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import '@babel/polyfill';
-import { login, logout } from './a-auth';
+import { logout } from './a-auth';
 import { addTour, editTour, deleteTour, editTourPhotos } from './f-tours';
 import { addReview } from './f-reviews';
 import { payForTour } from './stripe';
@@ -20,7 +20,8 @@ import {
   changeStatus,
   changeRole,
   changePhoto,
-  signup
+  signup,
+  login
 } from './f-users';
 
 const signupForm = document.querySelector('.signup-form');
